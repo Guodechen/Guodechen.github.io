@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/05/10/my-first-post/</loc>
+    <lastmod>2016-06-17T02:50:39.648Z</lastmod>
+    <data>
+        <display>
+        <title>小郭博客推新啦</title>
+        <pubTime>2016-05-10T12:43:31.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/06/16/js-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%90%86%E8%A7%A3/</loc>
     <lastmod>2016-06-17T00:41:50.022Z</lastmod>
     <data>
@@ -31,21 +46,6 @@
         
         <tag>c/c++</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/05/10/my-first-post/</loc>
-    <lastmod>2016-05-14T06:44:45.648Z</lastmod>
-    <data>
-        <display>
-        <title>小郭博客推新啦</title>
-        <pubTime>2016-05-10T12:43:31.000Z</pubTime>
-        
          
            
         </display>
