@@ -16,7 +16,7 @@
 <meta property="og:description" content="今读Effective c++ 01-03条款
 01 视C++为一个语言联邦由于有C所以有C++，并且有了object-oriented-C++，template C++,STL
 02 尽量以const，enum，inline替换#define或许#define不视为语言的一部分，因此编译的时候编译器不会检查是否有错，因此不会记录在符号表内。于是经常容易发生错误。1） 字符串用const的定义：">
-<meta property="og:updated_time" content="2017-02-23T15:05:06.810Z">
+<meta property="og:updated_time" content="2017-02-23T15:10:23.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Effective c++ 01-03条款">
 <meta name="twitter:description" content="今读Effective c++ 01-03条款
@@ -303,6 +303,7 @@ std::size_t cTextBlock::length() const
     }                                     
     return textLength;
 }
+4） 在使用const和none-const成员函数中避免重复（还得继续参透）
 </code></pre>
       
     </div>
