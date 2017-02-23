@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/c-c/" style="font-size: 10px;">c/c++</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/c-c/" style="font-size: 15px;">c/c++</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -193,6 +193,129 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Effective-c-01-04条款" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/23/Effective-c-01-04条款/" class="article-date">
+  	<time datetime="2017-02-23T14:32:02.000Z" itemprop="datePublished">2017-02-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/23/Effective-c-01-04条款/">Effective c++ 01-03条款</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今读Effective c++ 01-03条款</p>
+<h2 id="01-视C-为一个语言联邦"><a href="#01-视C-为一个语言联邦" class="headerlink" title="01 视C++为一个语言联邦"></a>01 视C++为一个语言联邦</h2><p>由于有C所以有C++，并且有了object-oriented-C++，template C++,STL</p>
+<h2 id="02-尽量以const，enum，inline替换-define"><a href="#02-尽量以const，enum，inline替换-define" class="headerlink" title="02 尽量以const，enum，inline替换#define"></a>02 尽量以const，enum，inline替换#define</h2><p>或许#define不视为语言的一部分，因此编译的时候编译器不会检查是否有错，因此不会记录在符号表内。于是经常容易发生错误。<br>1） 字符串用const的定义：<br>    const char* const authorName = “Scott Meyers”;<br>尽量定义为<br>    const std::string authorName(“Scott Meyers”);<br>2） class中经常使用到的用static的变量尽量用enum代替<br>    class GamePlayer {<br>        static const int NumTurns = 5;<br>        int scores[NumTurns];<br>        …<br>    }<br>    最好使用<br>    class GamePlayer {<br>        enum { NumTurns = 5};</p>
+<pre><code>    int scores[NumTurns];
+    ...
+} 
+</code></pre><p>3） 对于形似函数的宏，最好改用inline函数替换#defines</p>
+<h2 id="尽可能多的使用const"><a href="#尽可能多的使用const" class="headerlink" title="尽可能多的使用const"></a>尽可能多的使用const</h2><pre><code>### 如果关键字const出现在星号的左边，代表被指物是常量；如果出现在星号右边，表示指针自身是常亮；如果两边都有，表示被指物和指针两者都是常量。
+1）自身成员函数可以使用
+class ...{
+    const  ... operator * (const ...&amp; lhs,const ...&amp;rhs);
+}
+可以避免写代码时a * b = c的形式出现无法估量的错误
+2）const 成员函数
+class TextBlock {
+public:
+    ...
+    const char&amp;[] operator[](std::size_t position) const  
+    {return text[position]; }            //const 对象
+
+    char&amp;[] operator[](std::size_t position)
+    {return text[position]; }            //非const 对象
+private:
+    std::string text;
+}
+TextBlock tb(&quot;Hello&quot;);            //调用非const
+std::cout &lt;&lt; tb[0];
+TextBlock ctb(&quot;World&quot;);            //调用const
+std::cout &lt;&lt; ctb[0];
+只能修改未调用const的函数值，不能调用使用const函数值
+3） c++的摆动场mutable（可变的）
+当const函数修改private数据成员的值的时候，将其变成可变数据成员
+class CTextBlock {
+    public:
+        ...
+        std::size_t length() const;
+    private:
+        char *pText;
+        std::size_t textLength;
+        bool lengthIsValid;
+};
+std::size_t cTextBlock::length() const
+{
+    if(!lengthIsvalid){
+        textLength = std::strlen(pText); //错误！在const成员函数内
+        lengthIsValid = true;             // 不能复制给textLength
+    }                                     // 和lengthIsValid
+    return textLength;
+}
+应该使用
+class CTextBlock {
+    public:
+        ...
+        std::size_t length() const;
+    private:
+        char *pText;
+        mutable std::size_t textLength;
+        mutable bool lengthIsValid;
+};
+std::size_t cTextBlock::length() const
+{
+    if(!lengthIsvalid){
+        textLength = std::strlen(pText); 
+        lengthIsValid = true;             
+    }                                     
+    return textLength;
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-第五周周记" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -694,7 +817,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Dechen Guo (Ethan)
+    		&copy; 2017 Dechen Guo (Ethan)
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

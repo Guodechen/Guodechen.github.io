@@ -4,18 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>第一周周记 | 小前端</title>
+  <title>Effective c++ 01-03条款 | 小前端</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一周的时间转瞬即逝。上周主要是围绕着Nodejs展开了学习。从上上周露营完回来之后一直大睡，一直到晚上去家园开新生大会。周末也就这样过了。上周开始调整了心态，调整了自己的目标。周二上过陈悦的计算机系统基础，觉得我应该重拾信心，去深入的学习C和C++，又因为某一次聊天的时候谈及google公司，深深的被google公司的文化所吸引。但Google公司只招software engineer，所以不得不">
+  <meta name="description" content="今读Effective c++ 01-03条款
+01 视C++为一个语言联邦由于有C所以有C++，并且有了object-oriented-C++，template C++,STL
+02 尽量以const，enum，inline替换#define或许#define不视为语言的一部分，因此编译的时候编译器不会检查是否有错，因此不会记录在符号表内。于是经常容易发生错误。1） 字符串用const的定义：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一周周记">
-<meta property="og:url" content="http://yoursite.com/2016/10/23/第一周周记/index.html">
+<meta property="og:title" content="Effective c++ 01-03条款">
+<meta property="og:url" content="http://yoursite.com/2017/02/23/Effective-c-01-04条款/index.html">
 <meta property="og:site_name" content="小前端">
-<meta property="og:description" content="一周的时间转瞬即逝。上周主要是围绕着Nodejs展开了学习。从上上周露营完回来之后一直大睡，一直到晚上去家园开新生大会。周末也就这样过了。上周开始调整了心态，调整了自己的目标。周二上过陈悦的计算机系统基础，觉得我应该重拾信心，去深入的学习C和C++，又因为某一次聊天的时候谈及google公司，深深的被google公司的文化所吸引。但Google公司只招software engineer，所以不得不">
-<meta property="og:updated_time" content="2016-11-06T05:14:46.534Z">
+<meta property="og:description" content="今读Effective c++ 01-03条款
+01 视C++为一个语言联邦由于有C所以有C++，并且有了object-oriented-C++，template C++,STL
+02 尽量以const，enum，inline替换#define或许#define不视为语言的一部分，因此编译的时候编译器不会检查是否有错，因此不会记录在符号表内。于是经常容易发生错误。1） 字符串用const的定义：">
+<meta property="og:updated_time" content="2017-02-23T15:05:06.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一周周记">
-<meta name="twitter:description" content="一周的时间转瞬即逝。上周主要是围绕着Nodejs展开了学习。从上上周露营完回来之后一直大睡，一直到晚上去家园开新生大会。周末也就这样过了。上周开始调整了心态，调整了自己的目标。周二上过陈悦的计算机系统基础，觉得我应该重拾信心，去深入的学习C和C++，又因为某一次聊天的时候谈及google公司，深深的被google公司的文化所吸引。但Google公司只招software engineer，所以不得不">
+<meta name="twitter:title" content="Effective c++ 01-03条款">
+<meta name="twitter:description" content="今读Effective c++ 01-03条款
+01 视C++为一个语言联邦由于有C所以有C++，并且有了object-oriented-C++，template C++,STL
+02 尽量以const，enum，inline替换#define或许#define不视为语言的一部分，因此编译的时候编译器不会检查是否有错，因此不会记录在符号表内。于是经常容易发生错误。1） 字符串用const的定义：">
   
     <link rel="alternative" href="/atom.xml" title="小前端" type="application/atom+xml">
   
@@ -193,11 +199,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-第一周周记" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Effective-c-01-04条款" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/23/第一周周记/" class="article-date">
-  	<time datetime="2016-10-23T05:13:27.000Z" itemprop="datePublished">2016-10-23</time>
+      <a href="/2017/02/23/Effective-c-01-04条款/" class="article-date">
+  	<time datetime="2017-02-23T14:32:02.000Z" itemprop="datePublished">2017-02-23</time>
 </a>
     </div>
   
@@ -210,7 +216,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      第一周周记
+      Effective c++ 01-03条款
     </h1>
   
 
@@ -219,7 +225,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a></li></ul>
 	</div>
 
         
@@ -230,8 +236,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一周的时间转瞬即逝。上周主要是围绕着Nodejs展开了学习。<br>从上上周露营完回来之后一直大睡，一直到晚上去家园开新生大会。周末也就这样过了。<br>上周开始调整了心态，调整了自己的目标。<br>周二上过陈悦的计算机系统基础，觉得我应该重拾信心，去深入的学习C和C++，又因为某一次聊天的时候谈及google公司，深深的被google公司的文化所吸引。但Google公司只招software engineer，所以不得不从前端转行到c++。也因为这一次的机组之行让我对自己的初心不忘。<br>但还是在努力的学习js，怕以后用c++找不到好工作，js的前端我也是不太想放弃，所以希望大二上能够继续学习前端，等到大二下正式开始学习c++之旅。<br>这是这周思前想后确定的大体目标。<br>从本周开始，慢慢深入学习JavaScript，先从node接触，慢慢转变前后端的思维。也在菜鸟教程上基本入了一个node的门。对node有了一个大体的了解。理解了服务端以及客户端，也明白了路由切换的问题。<br>node的api实在太多了，多的让人眼花缭乱。对于编程思维，还有很大的提高。<br>记本周的流水账。稍微总结一下：<br>1、确定了今后的发展目标。<br>2、调整了学习态度。<br>3、node入门。<br>4、编程思维略有进步。<br>下周会做的更好！</p>
+        <p>今读Effective c++ 01-03条款</p>
+<h2 id="01-视C-为一个语言联邦"><a href="#01-视C-为一个语言联邦" class="headerlink" title="01 视C++为一个语言联邦"></a>01 视C++为一个语言联邦</h2><p>由于有C所以有C++，并且有了object-oriented-C++，template C++,STL</p>
+<h2 id="02-尽量以const，enum，inline替换-define"><a href="#02-尽量以const，enum，inline替换-define" class="headerlink" title="02 尽量以const，enum，inline替换#define"></a>02 尽量以const，enum，inline替换#define</h2><p>或许#define不视为语言的一部分，因此编译的时候编译器不会检查是否有错，因此不会记录在符号表内。于是经常容易发生错误。<br>1） 字符串用const的定义：<br>    const char* const authorName = “Scott Meyers”;<br>尽量定义为<br>    const std::string authorName(“Scott Meyers”);<br>2） class中经常使用到的用static的变量尽量用enum代替<br>    class GamePlayer {<br>        static const int NumTurns = 5;<br>        int scores[NumTurns];<br>        …<br>    }<br>    最好使用<br>    class GamePlayer {<br>        enum { NumTurns = 5};</p>
+<pre><code>    int scores[NumTurns];
+    ...
+} 
+</code></pre><p>3） 对于形似函数的宏，最好改用inline函数替换#defines</p>
+<h2 id="尽可能多的使用const"><a href="#尽可能多的使用const" class="headerlink" title="尽可能多的使用const"></a>尽可能多的使用const</h2><pre><code>### 如果关键字const出现在星号的左边，代表被指物是常量；如果出现在星号右边，表示指针自身是常亮；如果两边都有，表示被指物和指针两者都是常量。
+1）自身成员函数可以使用
+class ...{
+    const  ... operator * (const ...&amp; lhs,const ...&amp;rhs);
+}
+可以避免写代码时a * b = c的形式出现无法估量的错误
+2）const 成员函数
+class TextBlock {
+public:
+    ...
+    const char&amp;[] operator[](std::size_t position) const  
+    {return text[position]; }            //const 对象
 
+    char&amp;[] operator[](std::size_t position)
+    {return text[position]; }            //非const 对象
+private:
+    std::string text;
+}
+TextBlock tb(&quot;Hello&quot;);            //调用非const
+std::cout &lt;&lt; tb[0];
+TextBlock ctb(&quot;World&quot;);            //调用const
+std::cout &lt;&lt; ctb[0];
+只能修改未调用const的函数值，不能调用使用const函数值
+3） c++的摆动场mutable（可变的）
+当const函数修改private数据成员的值的时候，将其变成可变数据成员
+class CTextBlock {
+    public:
+        ...
+        std::size_t length() const;
+    private:
+        char *pText;
+        std::size_t textLength;
+        bool lengthIsValid;
+};
+std::size_t cTextBlock::length() const
+{
+    if(!lengthIsvalid){
+        textLength = std::strlen(pText); //错误！在const成员函数内
+        lengthIsValid = true;             // 不能复制给textLength
+    }                                     // 和lengthIsValid
+    return textLength;
+}
+应该使用
+class CTextBlock {
+    public:
+        ...
+        std::size_t length() const;
+    private:
+        char *pText;
+        mutable std::size_t textLength;
+        mutable bool lengthIsValid;
+};
+std::size_t cTextBlock::length() const
+{
+    if(!lengthIsvalid){
+        textLength = std::strlen(pText); 
+        lengthIsValid = true;             
+    }                                     
+    return textLength;
+}
+</code></pre>
       
     </div>
     
@@ -240,18 +312,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/10/30/第二周周记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          第二周周记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/16/js-块级作用域理解/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js 块级作用域理解</div>
+    <a href="/2016/11/20/第五周周记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第五周周记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -297,7 +360,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="第一周周记" data-title="第一周周记" data-url="http://yoursite.com/2016/10/23/第一周周记/"></div>
+	<div class="ds-thread" data-thread-key="Effective-c-01-04条款" data-title="Effective c++ 01-03条款" data-url="http://yoursite.com/2017/02/23/Effective-c-01-04条款/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
