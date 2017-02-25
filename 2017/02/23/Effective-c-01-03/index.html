@@ -16,7 +16,7 @@
 <meta property="og:description" content="今读Effective c++ 01-03条款
 01 视C++为一个语言联邦由于有C所以有C++，并且有了object-oriented-C++，template C++,STL
 02 尽量以const，enum，inline替换#define或许#define不视为语言的一部分，因此编译的时候编译器不会检查是否有错，因此不会记录在符号表内。于是经常容易发生错误。1） 字符串用const的定义：">
-<meta property="og:updated_time" content="2017-02-23T15:22:25.723Z">
+<meta property="og:updated_time" content="2017-02-25T03:14:01.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Effective c++ 01-03条款">
 <meta name="twitter:description" content="今读Effective c++ 01-03条款
@@ -303,7 +303,16 @@ std::size_t cTextBlock::length() const
     }                                     
     return textLength;
 }
-4） 在使用const和none-const成员函数中避免重复（还得继续参透）
+4） 使用const_cast&lt;type &amp;/*&gt;以及static_cast&lt;type &amp;/*&gt;
+const_cast&lt;type &amp;/*&gt;可以消除const引用，
+例如：
+const int constant = 10;        
+const int* modify = &amp;constant;
+int *a = const_cast&lt;int *&gt; (modify);
+*a = 5;                                //将modify的值改变成5，但是constant值并不会改变
+std::cout &lt;&lt; constant;
+
+static_cast&lt;type &amp;/*&gt;能将派生类指向基类
 </code></pre>
       
     </div>
